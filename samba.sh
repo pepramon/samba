@@ -58,5 +58,5 @@ chown -R "$USER:$group" "$share" || { echo "Failed to set ownership for director
 if [ -e "/etc/samba/smb.custom" ]; then
     exec smbd --configfile=/etc/samba/smb.custom --foreground --debug-stdout --debuglevel=1 --no-process-group
 else
-    exec smbd --debug-stdout --debuglevel=1 --no-process-group
+    exec smbd --foreground --debug-stdout --debuglevel=1 --no-process-group
 fi
